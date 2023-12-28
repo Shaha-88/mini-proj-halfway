@@ -63,7 +63,13 @@ function App() {
   //   return <button>at this point you should start sneezing benjies</button>;
   // } else if (counter > 10000000) {
   //   return <button>is your name Daisuke Kambe</button>;
-
+  //here
+  function AddPerSec(num) {
+    setInterval(() => {
+      setCounter((prev) => prev + num);
+    }, 1000);
+  }
+  //here
   function DoubleOrEverything() {
     if (counter > 1 && counter < 10) {
       return (
@@ -98,10 +104,15 @@ function App() {
       );
     }
     if (counter > 50 && counter < 60) {
+      AddPerSec(1);
+      alert("at this point your money works for you");
       return (
         <button onClick={() => IncOnClick(8)}>
           donald trump keeps blaming you for everything
         </button>
+        // setInterval(function (counter)=> {counter =counter+1}, 1000);
+
+        // setInterval({counter =counter+1}, 1000);
       );
     }
     if (counter > 60 && counter < 70) {
@@ -111,6 +122,9 @@ function App() {
         </button>
       );
     }
+
+    // setInterval(function () {element.innerHTML += "Hello"}, 1000);
+    // && counter < 80
     if (counter > 70 && counter < 80) {
       return (
         <div>
@@ -148,6 +162,9 @@ function App() {
   //   }
   // }
 
+  //
+  //
+  //
   return (
     <div
       className="App"
@@ -160,6 +177,7 @@ function App() {
       }}
     >
       <div>
+        {/* {AddPerSec()}  */}
         <h1>your fat wallet has {counter}</h1>
       </div>
       {DoubleOrEverything()}
